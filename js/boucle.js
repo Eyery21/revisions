@@ -39,6 +39,7 @@
 // }
 // console.log(batman);
 let batarang = 0;
+let batSignal = false;
 let mechants = [
   "joker",
   "l'epouvantail",
@@ -49,7 +50,6 @@ let mechants = [
 
 let button = document.getElementById("button");
 let batLigt = button;
-let batSignal = false;
 button.addEventListener("click", function () {
   batSignal = !batSignal;
 
