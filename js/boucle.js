@@ -38,8 +38,6 @@
 //   console.log(batman);
 // }
 // console.log(batman);
-console.log("le bat signal est allumé !");
-let batSignal = true;
 let batarang = 0;
 let mechants = [
   "joker",
@@ -48,25 +46,34 @@ let mechants = [
   "bane",
   "harley queen",
 ];
-console.log(typeof mechants);
-if (batSignal === true) {
-  console.log("batman part à la rescousse");
-  if (batarang === 0) {
-    console.log("batman n'as pas de bataragang");
-    do {
-      batarang += 1;
-      console.log("batman s'équipe en batarang");
-    } while (batarang < 30);
-    console.log("batman a assez de " + (batarang = "batarang"));
+
+let button = document.getElementById("button");
+let batLigt = button;
+let batSignal = false;
+button.addEventListener("click", function () {
+  batSignal = !batSignal;
+
+  if (batSignal === true) {
+    console.log("le bat signal est allumé !");
+    console.log("batman part à la rescousse");
+    if (batarang === 0) {
+      console.log("batman n'as pas de bataragang");
+      do {
+        batarang += 1;
+        console.log("batman s'équipe en batarang");
+      } while (batarang < 30);
+      console.log("batman a assez de " + (batarang = "batarang"));
+    }
+    console.log(
+      "batman se demande qui sera l'énnemi à affronter, il consulte le bat-ordinateur"
+    );
+    let random = mechants[Math.floor(Math.random() * mechants.length)];
+
+    console.log("le bat ordinateur indique le mechant est " + random);
+  } else {
+    console.log("le batsignal est étaint");
+
+    console.log("batman reste dans la batcave");
   }
-  console.log(
-    "batman se demande qui sera l'énnemi à affronter, il consulte le bat-ordinateur"
-  );
-    
-  console.log(
-    "le bat ordinateur indique le mechant est " +
-      mechants[Math.floor(Math.random() * mechants.length)]
-  );
-} else {
-  console.log("batman reste dans la batcave");
-}
+});
+console.log("le batsignal est éteint");
